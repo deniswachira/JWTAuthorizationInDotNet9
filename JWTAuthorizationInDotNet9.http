@@ -1,0 +1,32 @@
+@JWTAuthorizationInDotNet9_HostAddress = http://localhost:5214
+
+POST {{JWTAuthorizationInDotNet9_HostAddress}}/api/auth/register
+Content-Type: application/json
+
+{  
+  "username":"test@mail.com",
+  "password":"Test123#"
+}
+
+### 2. Login (Get Tokens)
+# @name login
+POST {{JWTAuthorizationInDotNet9_HostAddress}}/api/auth/login
+Content-Type: application/json
+
+{
+  "username":"test@mail.com",
+  "password":"Test123#"
+}
+
+###
+
+POST {{JWTAuthorizationInDotNet9_HostAddress}}/api/auth/refresh-token
+Content-Type: application/json
+
+{
+  "userId": "3ac95e14-2dd4-4735-a561-08de4b9004e1",
+  "refreshToken": "ExDLV7hD8rVql8gwo7oe7giZz68VNCIRT1e3W5C+atE="
+}
+
+
+###
